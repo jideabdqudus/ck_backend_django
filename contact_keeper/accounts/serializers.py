@@ -9,7 +9,8 @@ class UserSerializer(serializers.ModelSerializer):
         model = User
         fields = ('id', 'username', 'email')
 
-#Register Serializer
+
+# Register Serializer
 class RegisterSerializer(serializers.ModelSerializer):
     class Meta:
         model = User
@@ -26,8 +27,11 @@ class RegisterSerializer(serializers.ModelSerializer):
         return user
 
 
-#Login Serializer
+# Login Serializer
 class LoginSerializer(serializers.Serializer):
+    # class Meta:
+    #     model = User
+    #     fields = ('username', 'password')
     username = serializers.CharField()
     password = serializers.CharField()
 
