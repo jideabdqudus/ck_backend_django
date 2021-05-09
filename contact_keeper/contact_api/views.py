@@ -6,7 +6,7 @@ from .serializers import ContactSerializer
 # Create your views here.
 class ContactViewSet(viewsets.ModelViewSet):
     permission_classes = [
-        permissions.AllowAny
+        permissions.IsAuthenticated
     ]
     serializer_class = ContactSerializer
 
@@ -15,4 +15,4 @@ class ContactViewSet(viewsets.ModelViewSet):
         return self.request.user.contacts.all()
 
     def perform_create(self, serializer):
-        serializer.save(owner='self.request.user')
+        serializer.save(owner=self.request.user)

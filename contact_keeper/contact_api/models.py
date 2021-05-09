@@ -9,5 +9,5 @@ class Contacts(models.Model):
     phone = models.IntegerField()
     type = models.CharField(max_length=20)
     created_at = models.DateTimeField(auto_now_add=True)
-    owner = models.ForeignKey(User, related_name='contacts', on_delete=models.CASCADE, null=False)
+    owner = models.ForeignKey(User, related_name='contacts', on_delete=models.CASCADE, null=True)
 
