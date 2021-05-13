@@ -175,3 +175,6 @@ CORS_ALLOW_HEADERS = [
     'x-csrftoken',
     'x-requested-with',
 ]
+
+
+# AUTHENTICATION_BACKENDS = ['accounts.models.EmailBackend']
